@@ -36,7 +36,8 @@ namespace HadikAI
                     }
                     catch (InvalidOperationException)
                     {
-                        reward = -10; // Trest za kolizi
+                        double reward = -10; // Trest za kolizi
+                        agent.UpdateQValue((snakeGame.Body[0].x, snakeGame.Body[0].y), action, reward, (snakeGame.Body[0].x, snakeGame.Body[0].y), actions);
                         gameOver = true; // Konec hry
                     }
                 }

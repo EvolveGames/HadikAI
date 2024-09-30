@@ -36,7 +36,9 @@ public class Snake
         var newHead = (Body[0].x + Direction.x, Body[0].y + Direction.y);
 
         // Kontrola kolizí s okraji
-        if (newHead.x < 0 || newHead.x >= width || newHead.y < 0 || newHead.y >= height || Body.Contains(newHead))
+
+
+        if (newHead.Item1 < 0 || newHead.Item1 >= width || newHead.Item2 < 0 || newHead.Item2 >= height || Body.Contains(newHead))
         {
             throw new InvalidOperationException("Koliduje s okrajem nebo se sebou samým.");
         }
